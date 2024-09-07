@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:laravel_echo/laravel_echo.dart';
 import 'package:example/app_state.dart';
 import 'package:example/echo/pusher.dart';
 import 'package:example/echo/socket_io.dart';
-import 'package:example/widgets/listen_to_channel_modal.dart';
 import 'package:example/widgets/leave_channel_modal.dart';
+import 'package:example/widgets/listen_to_channel_modal.dart';
+import 'package:flutter/material.dart';
+import 'package:laravel_echo/laravel_echo.dart';
 import 'package:pusher_client/pusher_client.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
@@ -34,7 +33,7 @@ class _ActionsView extends State<ActionsView> {
 
     initEcho();
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       appState = AppState.of(context);
       log = appState.log;
     });

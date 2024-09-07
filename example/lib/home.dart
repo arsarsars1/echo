@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:example/app_state.dart';
-import 'package:example/widgets/logs_view.dart';
 import 'package:example/widgets/actions_view.dart';
+import 'package:example/widgets/logs_view.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
     date += ":${now.minute.toString().padLeft(2, '0')}";
     date += ":${now.second.toString().padLeft(2, '0')}";
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
         logs.insert(0, LogString(date: date, text: event));
       });
